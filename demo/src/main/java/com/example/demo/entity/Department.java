@@ -59,13 +59,13 @@ public class Department {
     public Department() {
     }
 
+    // Priority queue that keeps elements of queue in ascending order by the
+    // priority
+
     @Override
     public String toString() {
-        return "Department{" +
-                "departmentId=" + departmentId +
-                ", departmentName='" + departmentName + '\'' +
-                ", departmentAddress='" + departmentAddress + '\'' +
-                ", departmentCode='" + departmentCode + '\'' +
-                '}';
+        return "Department{" + "departmentId=" + departmentId + ", departmentName='" + departmentName + '\''
+                + ", departmentAddress='" + departmentAddress + '\'' + ", departmentCode='" + departmentCode + '\''
+                + '}';
     }
 }
