@@ -32,4 +32,10 @@ public class ItemController {
     public Item updateItem(@PathVariable("id") Long id, @RequestBody Item item){
         return itemService.updateItem(id, item);
     }
+
+    @DeleteMapping("/items/delete/{id}")
+    public String deleteItem(@PathVariable("id") Long id){
+        itemService.deleteItem(id);
+        return "Item deleted of id " + id;
+    }
 }

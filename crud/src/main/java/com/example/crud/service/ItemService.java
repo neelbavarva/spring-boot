@@ -40,4 +40,8 @@ public class ItemService {
 
         return itemRepository.save(itemDB);
     }
+
+    public void deleteItem(Long id) {
+        itemRepository.deleteById(id);
+    }
 }
