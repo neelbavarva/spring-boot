@@ -4,6 +4,7 @@ import com.example.jwt.helper.JwtUtil;
 import com.example.jwt.model.JwtRequest;
 import com.example.jwt.model.JwtResponse;
 import com.example.jwt.service.CustomUserDetailsService;
+import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -38,6 +39,8 @@ public class JwtController {
             throw  new Exception("Bad Credentials !");
         } catch(BadCredentialsException e){
             throw  new Exception("Bad Credentials !");
+        } catch (ExpiredJwtException e) {
+            System.out.println(" Token expired ");
         }
 
         UserDetails userDetails = this.customUserDetailsService.loadUserByUsername(jwtRequest.getUsername());
